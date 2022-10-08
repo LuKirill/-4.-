@@ -50,13 +50,21 @@ def func_3():
                f'оно появилось в массиве {dct[i]} раз(а)'
 
 
+def func_4():
+    n = max(array, key=array.count)
+    return f'Чаще всего встречается число {n}, ' \
+           f'оно появилось в массиве {array.count(n)} раз(а)'
+
+
 print(func_1())
 print(func_2())
 print(func_3())
+print(func_4())
 print(timeit("func_1()", setup='from __main__ import func_1', number=10000))
 print(timeit("func_2()", setup='from __main__ import func_2', number=10000))
 print(timeit("func_3()", setup='from __main__ import func_3', number=10000))
+print(timeit("func_4()", setup='from __main__ import func_4', number=10000))
 run('func_1()')
 run('func_2()')
 run('func_3()')
-# до решения в 1 строчку не додумался, но при повторных замеров вариант со словарем и встроенной функцией sorted()
+run('func_4()')
